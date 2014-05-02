@@ -55,12 +55,11 @@
 				<div id="form-div">
 								<h1>Settings</h1><br />
 				
-                <form method="post">	
+                <form method="post" action="welcome.html">	
               		<input name="name" type="text" class="signup-input" placeholder="Name" id="name" /><br />
               		<input name="email" type="text" class="signup-input" placeholder="Email Address" id="email" /><br />
               		<input name="number" type="text" class="signup-input" placeholder="Phone Number" id="number" /><br />
       				<br />
-      				// user saves changes, brought back to welcome.html (QR scan screen) 
       				<input type="submit" class="signup-input" value="Save" id="button"/>
       				</form>
       			</div>

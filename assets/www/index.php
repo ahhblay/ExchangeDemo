@@ -55,12 +55,11 @@
 				<div id="form-div">
 								<h1>Sign Up</h1><br />
 				
-                <form method="post">	
+                <form method="post" action="welcome.html">	
               		<input name="name" type="text" class="signup-input" placeholder="Name" id="name" /><br />
               		<input name="email" type="text" class="signup-input" placeholder="Email Address" id="email" /><br />
               		<input name="number" type="text" class="signup-input" placeholder="Phone Number" id="number" /><br />
       				<br />
-      				//user registers basic info, app opens up QR code scan (welcome.html) 
       				<input type="submit" class="signup-input" value="Register" id="button"/>
       				</form>
       			</div>

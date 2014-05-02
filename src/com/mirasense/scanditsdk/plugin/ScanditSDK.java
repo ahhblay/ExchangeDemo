@@ -19,6 +19,7 @@
 package com.mirasense.scanditsdk.plugin;
 
 import java.util.Iterator;
+import org.apache.cordova.*;
 
 
 import org.apache.cordova.api.CallbackContext;
@@ -270,7 +271,7 @@ public class ScanditSDK extends CordovaPlugin {
             JSONArray args = new JSONArray();
             args.put(barcode);
             args.put("UNKNOWN");
-            mCallbackContext.success(args);
+            mCallbackContext.success("Success! You are now a member of" + args + ".");
             
         } else if (resultCode == ScanditSDKActivity.CANCEL) {
         	mCallbackContext.error("Canceled");

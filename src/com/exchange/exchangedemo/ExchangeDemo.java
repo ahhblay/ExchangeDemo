@@ -20,6 +20,7 @@
 package com.exchange.exchangedemo;
 
 import android.os.Bundle;
+
 import org.apache.cordova.*;
 
 public class ExchangeDemo extends DroidGap 
