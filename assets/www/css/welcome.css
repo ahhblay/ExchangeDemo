@@ -51,6 +51,12 @@ figcaption {
     margin-right: auto;
 }
 
+#icons {
+	position: relative;
+	top: -70px;
+	left: 270px;
+	width: 50px;
+}
 
 /* Portrait layout (default)
 .app {

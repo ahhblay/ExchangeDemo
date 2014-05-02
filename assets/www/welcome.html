@@ -43,7 +43,7 @@
             }
 
             function failure(error) {
-                alert("Failed: " + error);
+                alert(error);
             }
 
      		function scan() {
@@ -55,13 +55,17 @@
                               "2DScanning" : true}]);
              }
         
-
+			function callSettings() {
+				window.location = "settings.php";
+			}
 
         </script>
         
     </head>
     <body>
-        
+        <div id="icons">
+        <img src="settings.png" onClick="callSettings()" width=50%" class="icon" />
+        </div>
         <h1>Scan the QR Code<br />
         to join the club</h1>
         
