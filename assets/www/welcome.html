@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<!--
+    Licensed to the Apache Software Foundation (ASF) under one
+    or more contributor license agreements.  See the NOTICE file
+    distributed with this work for additional information
+    regarding copyright ownership.  The ASF licenses this file
+    to you under the Apache License, Version 2.0 (the
+    "License"); you may not use this file except in compliance
+    with the License.  You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing,
+    software distributed under the License is distributed on an
+    "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+     KIND, either express or implied.  See the License for the
+    specific language governing permissions and limitations
+    under the License.
+-->
+<html>
+    <head>
+        <title>Exchange</title>
+        <link rel="stylesheet" type="text/css" href="css/welcome.css"/>
+        <script src="cordova.js"></script>
+        <script src="PushNotifications.js"></script>
+        
+        <script type="text/javascript">
+        
+                   
+       	function success(resultArray) {
+
+        alert("Scanned " + resultArray[0] + " code: " + resultArray[1]);
+
+                // NOTE: Scandit SDK Phonegap Plugin Versions 1.* for iOS report
+                // the scanning result as a concatenated string.
+                // Starting with version 2.0.0, the Scandit SDK Phonegap
+                // Plugin for iOS reports the result as an array
+                // identical to the way the Scandit SDK plugin for Android reports results.
+
+                // If you are running the Scandit SDK Phonegap Plugin Version 1.* for iOS,
+                // use the following approach to generate a result array from the string result returned:
+                // resultArray = result.split("|");
+            }
+
+            function failure(error) {
+                alert("Failed: " + error);
+            }
+
+     		function scan() {
+                // See below for all available options. 
+                cordova.exec(success, failure, "ScanditSDK", "scan",
+                             ["rUDSfs0JEeOFMmy9O6AUoKdEsz08opDPoeyxlvmeGq4",
+                              {"beep": true,
+                             "1DScanning" : true,
+                              "2DScanning" : true}]);
+             }
+        
+
+
+        </script>
+        
+    </head>
+    <body>
+        
+        <h1>Scan the QR Code<br />
+        to join the club</h1>
+        
+        <div id="actions">
+        	<center>
+        		<img src="qrcode.png" onClick="scan()" width="50%" /></center>
+
+        </div>
+        
+    </body>
+</html>
