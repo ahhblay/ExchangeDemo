@@ -45,7 +45,7 @@
   	    mysql_select_db("sdb_nmaulino", $connect);
             
   	    if (isset($name)){      
-  	    	if(!mysql_query("INSERT INTO gcm_users (fname, phone) values ('$name','$number')", $connect))
+  	    	if(!mysql_query("INSERT INTO Members (fname, phone) values ('$name','$number')", $connect))
           	     die('Error: ' .mysql_error());
 	        else
           	     echo "<center>Your account has been successfully created.</center>";
