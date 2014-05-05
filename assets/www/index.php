@@ -34,7 +34,7 @@
     </head>
     <body>
 	<?php
-    	    $email = $_POST['email'];
+    	    $number = $_POST['number'];
   	    $name = $_POST['name'];
 
   	    //connect to database
@@ -45,7 +45,7 @@
   	    mysql_select_db("sdb_nmaulino", $connect);
             
   	    if (isset($name)){      
-  	    	if(!mysql_query("INSERT INTO gcm_users (name, email) values ('$name','$email')", $connect))
+  	    	if(!mysql_query("INSERT INTO gcm_users (fname, phone) values ('$name','$number')", $connect))
           	     die('Error: ' .mysql_error());
 	        else
           	     echo "<center>Your account has been successfully created.</center>";
