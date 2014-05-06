@@ -48,8 +48,6 @@
   	    if (isset($name)){      
   	    	if(!mysql_query("INSERT INTO Members (name, email, phone) values ('$name', '$email', '$number')", $connect))
           	     die('Error: ' .mysql_error());
-	        else
-          	     echo "<center>Your account has been successfully created.</center>";
   	    }
 	?>
 		
