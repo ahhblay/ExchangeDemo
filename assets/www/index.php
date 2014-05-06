@@ -34,8 +34,9 @@
     </head>
     <body>
 	<?php
+	    $name = $_POST['name'];
+	    $email = $_POST['email'];
     	    $number = $_POST['number'];
-  	    $name = $_POST['name'];
 
   	    //connect to database
   	    $connect = mysql_connect("dbserver.engr.scu.edu","nmaulino","FREE2799");
@@ -45,7 +46,7 @@
   	    mysql_select_db("sdb_nmaulino", $connect);
             
   	    if (isset($name)){      
-  	    	if(!mysql_query("INSERT INTO Members (fname, phone) values ('$name','$number')", $connect))
+  	    	if(!mysql_query("INSERT INTO Members (name, email, phone) values ('$name', '$email', '$number')", $connect))
           	     die('Error: ' .mysql_error());
 	        else
           	     echo "<center>Your account has been successfully created.</center>";
