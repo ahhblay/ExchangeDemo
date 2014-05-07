@@ -30,7 +30,7 @@ public class ExchangeDemo extends DroidGap
     {
         super.onCreate(savedInstanceState);
     	super.setIntegerProperty("splashscreen", R.drawable.splash);
-        super.loadUrl("file:///android_asset/www/index.php", 4000);
+        super.loadUrl("file:///android_asset/www/index.php", 6000);
     }
 }
 

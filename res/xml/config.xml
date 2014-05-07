@@ -13,7 +13,12 @@
     </author>
     <content src="index.html" />
     <access origin="*" />
+        <access origin="http://students.engr.scu.edu"/>
+    
     <feature name="ScanditSDK">
         <param name="android-package" value="com.mirasense.scanditsdk.plugin.ScanditSDK" />
+    </feature>
+    <feature name="InAppBrowser">
+    	<param name="android-package" value="org.apache.cordova.InAppBrowser" />
     </feature>
 </widget>
