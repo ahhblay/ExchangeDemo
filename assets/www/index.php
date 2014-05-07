@@ -27,38 +27,51 @@
         <script type="text/javascript">
         	app.initialize();
         	
-            function callWelcome() {
-                window.location = "welcome.html";
-            }
+        	function ajaxFunction(){
+        		var fullname = document.getElementById("name").value;
+        		var emailaddress = document.getElementById("email").value;
+        		var num = document.getElementById("number").value;
+        		var ajaxRequest;
+        		
+        try{
+                // Opera 8.0+, Firefox, Safari
+                ajaxRequest = new XMLHttpRequest();
+        } catch (e){
+                // Internet Explorer Browsers
+                try{
+                        ajaxRequest = new ActiveXObject("Msxml2.XMLHTTP");
+                } catch (e) {
+                        try{
+                                ajaxRequest = new ActiveXObject("Microsoft.XMLHTTP");
+                        } catch (e){
+                                // Something went wrong
+                                alert("Your browser broke!");
+                                return false;
+                        }
+                }
+        }
+        
+        ajaxRequest.onreadystatechange = function(){
+        	if(ajaxRequest.readyState == 4){
+        		document.signupForm.result.value = ajaxRequest.responseTest;
+        	}
+        }
+        ajaxRequest.open("GET", "http://students.engr.scu.edu/~ahsu/test.php?var1=" + fullname + "&var2=" + emailaddress + "&var3=" + num, true);
+        ajaxRequest.send(null);
+ }
+        	
         </script>
     </head>
     <body>
-	<?php
-    	    $name = $_POST['name'];
-	    $email = $_POST['email'];
-    	    $number = $_POST['number'];
-
-  	    //connect to database
-  	    $connect = mysql_connect("dbserver.engr.scu.edu","nmaulino","FREE2799");
-  	    if (!$connect)        
-      		die('Error in connection: ' . mysql_error());
-
-  	    mysql_select_db("sdb_nmaulino", $connect);
-            
-  	    if (isset($name)){      
-  	    	if(!mysql_query("INSERT INTO Members (name, email, phone) values ('$name', '$email', '$number')", $connect))
-          	     die('Error: ' .mysql_error());
-  	    }
-	?>
 		
 				<div id="form-div">
 								<h1>Sign Up</h1><br />
 				
-                <form method="post" action="welcome.html">	
+                <form name="signupForm">	
               		<input name="name" type="text" class="signup-input" placeholder="Name" id="name" /><br />
               		<input name="email" type="text" class="signup-input" placeholder="Email Address" id="email" /><br />
-              		<input name="number" type="text" class="signup-input" placeholder="Phone Number" id="number" /><br />
-      				<br />
+              		<input name="number" type="text" onChange="ajaxFunction();" class="signup-input" placeholder="Phone Number" id="number" /><br />
+      				Server Ping: <input type="text" name="result" /><br />
       				<input type="submit" class="signup-input" value="Register" id="button"/>
       				</form>
       			</div>
