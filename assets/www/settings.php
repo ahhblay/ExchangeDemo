@@ -34,7 +34,11 @@
     </head>
     <body>
 	<?php
+<<<<<<< HEAD
     	   $name = $_POST['name'];
+=======
+  	    $name = $_POST['name'];
+>>>>>>> FETCH_HEAD
   	    $email = $_POST['email'];
     	    $number = $_POST['number'];
 
