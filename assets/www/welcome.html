@@ -22,14 +22,19 @@
         <title>Exchange</title>
         <link rel="stylesheet" type="text/css" href="css/welcome.css"/>
         <script src="cordova.js"></script>
-        <script src="PushNotifications.js"></script>
+        <script src="mootools.js"></script>
+        
         
         <script type="text/javascript">
         
                    
        	function success(resultArray) {
+		
+		var code = resultArray;
+		window.location.href = "success.php?scanned=" + code;
 
-        alert("Success! You're now a member of " + resultArray[0]);
+		
+		        // alert("Success! You're now a member of " + resultArray[0]);
 
                 // NOTE: Scandit SDK Phonegap Plugin Versions 1.* for iOS report
                 // the scanning result as a concatenated string.
@@ -40,6 +45,8 @@
                 // If you are running the Scandit SDK Phonegap Plugin Version 1.* for iOS,
                 // use the following approach to generate a result array from the string result returned:
                 // resultArray = result.split("|");
+                
+
             }
 
             function failure(error) {
